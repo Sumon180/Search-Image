@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        h1{
+            padding: 10px;
+            background-color: blue;
+            color: white;
+            font-size: 2.5rem;
+            text-align: center;
+        }
+        input{
+            padding: 12px;
+            margin: 20px 0 100px 300px;
+            text-align: center;
+            background-color: blueviolet;
+            color: white;
+            font-size: 1.4rem;
+            width: 40%;
+        }
+        img{
+            width: 200px;
+            height: 200px;
+            
+        }
+        h3{
+            color: blue;
+            background-color: gray;
+            padding: 4px;
+            text-align: center;
+        }
+        .image{
+            margin-left: 70px;
+            margin-bottom: 20px;
+            float: left;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Javascript Search Image</h1>
+    <input type="text" oninput="myfun()" name="" id="search" placeholder="Enter image name">
+
+    <div class="container">
+        <div class="image" data-title="bike">
+            <img src="bike.jpg" alt="">
+            <h3>bike</h3>
+        </div>
+        <div class="image" data-title="baby">
+            <img src="baby.jpg" alt="">
+            <h3>baby</h3>
+        </div>
+        <div class="image" data-title="baby">
+            <img src="baby2.jpg" alt="">
+            <h3>baby</h3>
+        </div>
+        <div class="image" data-title="baby">
+            <img src="baby3.jpg" alt="">
+            <h3>baby</h3>
+        </div>
+        <div class="image" data-title="flower">
+            <img src="flower.jpg" alt="">
+            <h3>flower</h3>
+        </div>
+        <div class="image" data-title="flower">
+            <img src="flower2.jpg" alt="">
+            <h3>flower</h3>
+        </div>
+        <div class="image" data-title="flower">
+            <img src="flower3.jpg" alt="">
+            <h3>flower</h3>
+        </div>
+        <div class="image" data-title="flower">
+            <img src="flwer4.jpg" alt="">
+            <h3>flower</h3>
+        </div>
+        <div class="image" data-title="car">
+            <img src="car.jpg" alt="">
+            <h3>car</h3>
+        </div>
+        <div class="image" data-title="car">
+            <img src="car2.jpg" alt="">
+            <h3>car</h3>
+        </div>
+        <div class="image" data-title="car">
+            <img src="car3.jpg" alt="">
+            <h3>car</h3>
+        </div>
+        <div class="image" data-title="cycle">
+            <img src="cycle.jpg" alt="">
+            <h3>cycle</h3>
+        </div>
+
+    </div>
+
+    <script>
+
+        function myfun(){
+            let search = document.getElementById('search');
+            let image = document.querySelectorAll('.image');
+            
+            for(let i=0; i<image.length; i++){
+                image[i].style.display = 'none';
+            }
+            for(let j=0; j<image.length; j++){
+                let title = image[j].getAttribute("data-title");
+                
+                if(search.value===title){
+                    image[j].style.display = 'block';
+                }
+                if(search.value===""){
+                    image[j].style.display = 'block';
+                }
+            }
+        }
+
+    </script>
+    
+</body>
+</html>
